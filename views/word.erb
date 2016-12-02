@@ -1,9 +1,9 @@
-<!-- <div class="col-md-6">
-  <h1>Words List</h1>
-  <ul>
-    <% @words_list.each() do |term| %>
-    <li><a href="/words/<%=term.id()%>"><%=term.name()%></a></li>
-    <% end %>
-  </ul>
+<h1>Key Term:</h1>
+<%=@single_word.word()%>
+<br>
+<br>
+<h1>Definition:</h1>
 
-</div> -->
+<a href="/definition/new">Add A Definition</a><br>
+<a href="/definition/new">Add an Additional Definition </a><br>
+<a href="/">Home</a>
