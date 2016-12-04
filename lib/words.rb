@@ -5,6 +5,7 @@ class Words
   define_method(:initialize) do |attributes|
     @word = attributes.fetch(:word)
     @id = @@words_list.length().+(1)
+    @definitions = []
   end
 
   define_singleton_method(:all) do
@@ -32,4 +33,13 @@ class Words
   define_singleton_method(:clear) do
     @@Words_list = []
   end
+
+  define_method(:definitions) do
+    @definitions
+  end
+
+  define_method(:save_definition) do |definition|
+    @definitions.push(definition)
+  end
+
 end

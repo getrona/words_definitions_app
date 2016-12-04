@@ -1,9 +1,14 @@
-<h1>Key Term:</h1>
+<h1>The Reserved Key Word:</h1>
 <%=@single_word.word()%>
 <br>
 <br>
-<h1>Definition:</h1>
+<h1>The Definition is:</h1>
+<ul>
+  <% @single_word.definitions.each do |definition| %>
+    <li><%= definition.meaning %></li>
+  <% end %>
+</ul>
 
-<a href="/definition/new">Add A Definition</a><br>
-<a href="/definition/new">Add an Additional Definition </a><br>
+<a href="/define/<%= @single_word.id()%>/form_definition">Add a Definition </a><br>
+<a href="/define/<%= @single_word.id()%>/form_definition">Add an Additional Definition </a><br>
 <a href="/">Home</a>

@@ -51,46 +51,10 @@ end
 
 describe(Definitions) do
 
-  before() do
-    Definitions.clear()
-  end
-
   describe('#meaning') do
     it('returns the definition created') do
       test_meaning = Definitions.new({:meaning => "Getro"})
       expect(test_meaning.meaning()).to(eq("Getro"))
-    end
-  end
-
-  describe('.all') do
-    it('returns an empty array at first') do
-      test_meaning = Definitions.new({:meaning => "Getro"})
-      expect(Definitions.all()).to(eq([]))
-    end
-  end
-
-  describe('#id') do
-    it('returns the id of the meaning create') do
-       test_meaning = Definitions.new({:meaning => "Getro"})
-      expect(test_meaning.id()).to(eq(1))
-    end
-  end
-
-  describe('#save') do
-    it('saves the new meaning that was created') do
-      test_meaning = Definitions.new({:meaning => "Getro"})
-      test_meaning.save()
-      expect(Definitions.all()).to(eq([test_meaning]))
-    end
-  end
-
-  describe('.find') do
-    it('will find the meaning in question with the help of the id') do
-      test_meaning = Definitions.new({:meaning => "Getro"})
-      test_meaning.save()
-      test_word2 = Definitions.new({:meaning => "Getro"})
-      test_word2.save()
-      expect(Definitions.find(test_meaning.id())).to(eq(test_meaning))
     end
   end
 end

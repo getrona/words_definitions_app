@@ -1,4 +1,102 @@
-<h1>Welcome To your Very own Ruby </h1>
-<p>What would you like to do?</p>
-<a href="/words/new">ADD A Word</a><br>
-<a href="/define">View list</a>
+<div class="row">
+  <div class="col-md-12">
+    <div class="jumbotron">
+      <h1>Rubyist Dictionary</h1>
+      <h2>The Ultimate Ruby Key Terms Hub</h2>
+      <p>Thank you for helping us update the dictionary</p>
+    </div>
+  </div>
+</div>
+<hr>
+
+<div class="row">
+  <div class="col-md-12">
+
+    <div class="col-md-6" >
+        <div class="well well-sm" id="display" >
+          <h3>What would you like to do?</h3>
+          <a href="/words/new">ADD A Word</a><br><br>
+          <a href="#">Sort Words List</a><br><br>
+          <a href="#">Search Word</a><br><br>
+          <a href="#">View Glossary</a><br><br>
+          <a href="/clear_list">Clear List</a>
+        </div>
+        <hr>
+
+        <div class="well well-sm" id="display2">
+          <h3><p>Unsure of the Ruby Reserved Key words?</p></h3><br>
+          <h4><p>Not a Problem! Please Consult the Definitive List Below. </p></h4><br>
+          <h5><p>Feel free to add them along with their respective definitions</p></h5><br>
+          <h3>Reserved Words List:</h3>
+        </div>
+        <hr>
+
+          <div class="col-md-3">
+            <ul>
+              <li>BEGIN</li>
+              <li>END</li>
+              <li>alias</li>
+              <li>and</li>
+              <li>begin</li>
+              <li>break</li>
+              <li>class</li>
+              <li>def</li>
+              <li>defined?</li>
+              <li>do</li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <ul>
+              <li>else</li>
+              <li>elsif</li>
+              <li>end</li>
+              <li>ensure</li>
+              <li>for</li>
+              <li>if</li>
+              <li>nil</li>
+              <li>yield</li>
+              <li>super</li>
+              <li>undef</li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <ul>
+              <li>else</li>
+              <li>elsif</li>
+              <li>end</li>
+              <li>ensure</li>
+              <li>for</li>
+              <li>if</li>
+              <li>nil</li>
+              <li>yield</li>
+              <li>super</li>
+              <li>undef</li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <ul>
+              <li>else</li>
+              <li>elsif</li>
+              <li>end</li>
+              <li>ensure</li>
+              <li>for</li>
+              <li>if</li>
+              <li>nil</li>
+              <li>yield</li>
+              <li>super</li>
+              <li>undef</li>
+            </ul>
+          </div>
+      </div>
+
+        <div class="col-md-6">
+          <h1>Words List:</h1>
+          <ul>
+            <% @words_list.each() do |term| %>
+            <li><a href="/define/<%=term.id()%>"><%= term.word() %></a></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+<hr>

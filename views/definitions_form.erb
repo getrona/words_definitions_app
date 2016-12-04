@@ -9,7 +9,7 @@
 </div>
 <hr>
 
-<form action="/define" method="post">
+<form action="/define/<%= @single_word.id()%>/word_define" method="post">
   <label for="define_input">Enter A Definition:</label>
   <input id="define_input" type="text" name="define_input" placeholder="Definition Goes Here">
   <button type="submit" class="btn btn-primary">Add Definition</button>

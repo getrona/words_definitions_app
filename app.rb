@@ -5,12 +5,8 @@ require('./lib/words')
 require('./lib/definitions')
 
 get('/') do
-  erb(:index)
-end
-
-get('/words') do
   @words_list = Words.all()
-  erb(:display)
+  erb(:index)
 end
 
 get('/words/new') do
@@ -24,28 +20,25 @@ post('/words') do
   erb(:success)
 end
 
-get('/words/:id') do
+get('/define/:id') do
   @single_word = Words.find(params.fetch("id").to_i())
   erb(:word)
 end
 
-get('/definition/new') do
+get('/define/:id/form_definition') do
+  @single_word = Words.find(params.fetch("id").to_i())
   erb(:definitions_form)
 end
 
-get('/define') do
-  @definitions_list = Definitions.all()
-  erb(:word)
-end
-
-get('/define/:id') do
-  @definitions_list = Definitions.find(params.fetch("id").to_i())
-  erb(:word)
-end
-
-post('/define') do
+post('/define/:id/word_define') do
+  @single_word = Words.find(params.fetch("id").to_i())
   user_definition = params.fetch('define_input')
   new_definition = Definitions.new(:meaning => user_definition)
-  new_definition.save()
-  erb(:success)
+  @single_word.save_definition(new_definition)
+  erb(:word)
+end
+
+get('/clear_list') do
+  @words_list = []
+  erb(:index)
 end
