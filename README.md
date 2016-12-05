@@ -18,6 +18,7 @@ There are no known bugs as of now, If you do run into any, do not hesitate to co
 
 ## Heroku Link
 
+https://mighty-cove-18670.herokuapp.com/
 
 ## Support and contact details
 
