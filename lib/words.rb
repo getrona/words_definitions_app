@@ -31,7 +31,7 @@ class Words
   end
 
   define_singleton_method(:clear) do
-    @@Words_list = []
+    @@words_list = []
   end
 
   define_method(:definitions) do

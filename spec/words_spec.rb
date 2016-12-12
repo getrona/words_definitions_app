@@ -2,11 +2,14 @@ require('rspec')
 require('definitions')
 require('words')
 
+
+
 describe(Words) do
 
   before() do
     Words.clear()
   end
+
 
   describe('#word') do
     it('returns the word created') do
